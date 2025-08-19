@@ -1,0 +1,42 @@
+<style>
+  .app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #f9fafb;
+    font-family: Arial, sans-serif;
+  }
+  .app-header {
+    background: #031a3e;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  .app-header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+  .app-header nav a {
+    margin-left: 1rem;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .app-header nav a:hover {
+    text-decoration: underline;
+  }
+</style>
+<div class="app-container">
+  <header class="app-header">
+    <h1>Blog</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+  <router-outlet />
+</div>

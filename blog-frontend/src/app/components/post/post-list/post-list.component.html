@@ -1,0 +1,45 @@
+<div class="container mt-4">
+  <h2 class="page-title">Articles</h2>
+
+  <button class="add-btn" (click)="openModal()">➕ Add new post</button>
+
+  <!-- MODAL -->
+  <div class="modal-backdrop" *ngIf="showModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h2>Add new post</h2>
+        <button class="close-btn" (click)="closeModal()">✖</button>
+      </div>
+
+      <div class="modal-body">
+        <app-post-form (postAdded)="onPostAdded()"></app-post-form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Liste des posts (toujours visibles) -->
+  <div class="post" *ngFor="let post of posts">
+    <h2 class="post-title">{{ post.title }}</h2>
+    <p class="post-meta">Article #{{ post.id }}</p>
+
+    <div class="post-content">
+      {{ post.content }}
+    </div>
+
+    <div class="comments-section">
+      <h4>Comments ({{ post.comments.length }})</h4>
+
+      <ng-container *ngIf="post.comments.length > 0; else noComments">
+        <ul class="comment-list">
+          <li *ngFor="let comment of post.comments" class="comment-item">
+            {{ comment.content }}
+          </li>
+        </ul>
+      </ng-container>
+
+      <ng-template #noComments>
+        <p class="text-muted">No comments yet.</p>
+      </ng-template>
+    </div>
+  </div>
+</div>
