@@ -3,7 +3,7 @@
 ### ⚙️ Installation
 #### 1. Clone repository
 ```bash
-git clone https://github.com/your-username/blog-project.git
+git clone https://github.com/yasmine-draoui/blog-project.git
 cd blog-project
 ```
 
